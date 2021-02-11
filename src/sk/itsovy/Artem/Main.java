@@ -1,6 +1,11 @@
 package sk.itsovy.Artem;
 
 @FunctionalInterface
+interface Prototype{
+    WordFinder display(String word);
+}
+
+@FunctionalInterface
 interface FileBrowser{
     String[] display();
 }
@@ -19,5 +24,10 @@ public class Main {
         for (String line : fileBrowser.display()){
             System.out.println(line);
         }
+
+        System.out.println("Searching for inputted word");
+        Prototype prototype = WordFinder::new;
+        prototype.display("was");
+
     }
 }
