@@ -15,7 +15,8 @@ public class Main {
         Main main = new Main();
         FileBrowser fileBrowser = main::showFileComponent;
 
-        System.out.println("Selected file:");
+        // added comment
+        System.out.println("Selected   file:");
         for (String line : fileBrowser.display()){
             System.out.println(line);
         }
