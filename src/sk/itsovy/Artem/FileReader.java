@@ -36,6 +36,10 @@ public class FileReader extends Component {
 class WordFinder {
     private FileReader fileReader = new FileReader();
 
+    public WordFinder(String word) {
+        findNextWord(word);
+    }
+
     public void findNextWord(String word) {
         boolean flag = false;
         int i = 1;

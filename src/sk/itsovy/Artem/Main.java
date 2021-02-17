@@ -1,12 +1,17 @@
 package sk.itsovy.Artem;
 
 @FunctionalInterface
-interface FileBrowser{
+interface Prototype {
+    WordFinder display(String word);
+}
+
+@FunctionalInterface
+interface FileBrowser {
     String[] display();
 }
 
 public class Main {
-    public String[] showFileComponent(){
+    public String[] showFileComponent() {
         FileReader fileReader = new FileReader();
         return fileReader.getInfoFromFile();
     }
@@ -15,10 +20,14 @@ public class Main {
         Main main = new Main();
         FileBrowser fileBrowser = main::showFileComponent;
 
-        // added comment
         System.out.println("Selected   file:");
-        for (String line : fileBrowser.display()){
+        for (String line : fileBrowser.display()) {
             System.out.println(line);
+
+            System.out.println("Searching for inputted word");
+            Prototype prototype = WordFinder::new;
+            prototype.display("wasxx");
+
         }
     }
 }
