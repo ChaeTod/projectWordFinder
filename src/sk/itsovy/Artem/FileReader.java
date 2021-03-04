@@ -49,11 +49,11 @@ class WordFinder {
             for (String words : line) {
                 if (words.equalsIgnoreCase(word)) {
                     System.out.println("'" + words + "'" + " - the word you're looking for is placed at line " + i + " on position " + j);
-                    i++;
                     flag = true;
                 }
                 j++;
             }
+            i++;
         }
         if (!flag) {
             System.out.println("There's no such word in selected file!");

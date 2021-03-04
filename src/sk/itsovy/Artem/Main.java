@@ -20,13 +20,13 @@ public class Main {
         Main main = new Main();
         FileBrowser fileBrowser = main::showFileComponent;
 
-        System.out.println("Selected   file:");
+        System.out.println("Selected file:");
         for (String line : fileBrowser.display()) {
             System.out.println(line);
 
             System.out.println("Searching for inputted word");
             Prototype prototype = WordFinder::new;
-            prototype.display("wasxx");
+            prototype.display("was");
 
         }
     }
